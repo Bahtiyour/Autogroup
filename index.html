@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoGroup</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/fonts.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrap">
+            <div class="header__items">
+              <div class="logos__block">
+                <a href="#">
+                  <img class="logo__desktop" src="img/logo.svg" alt="NO"
+                /></a>
+                <a href="#"
+                  ><img class="logo__mobile" src="/img/logomobile.svg" alt="NO"
+                /></a>
+              </div>
+              <nav class="header__group">
+                <ul class="header__list">
+                  <li class="header__item">
+                    <div class="dropdown">
+                      <a href="#!" class="header__link dropdown__list">
+                        Мировые аукционы</a
+                      >
+                      <div class="dropdown-content">
+                        <a href="#">Авто из Америки</a>
+                        <a href="#">Авто из Европы</a>
+                        <a href="#">Мото из Америки</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__item">
+                    <a href="#!" class="header__link">Каталог авто</a>
+                  </li>
+                  <li class="header__item">
+                    <div class="dropdown">
+                      <a href="#!" class="header__link dropdown__list"> Инфо</a>
+                      <div class="dropdown-content">
+                        <a href="#">Процесс покупки авто</a>
+                        <a href="#">Публикации</a>
+                        <a href="#">О компании</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="header__item">
+                    <a href="#!" class="header__link">Оплата</a>
+                  </li>
+                  <li class="header__item">
+                    <a href="#!" class="header__link">Контакты</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="social__items">
+                <div class="social__wrap hidden-mobile">
+                  <a href="#!" class="social__link instagram__item"></a>
+                  <a href="#!" class="social__link youtube__item"></a>
+                  <a href="#!" class="social__link vk__item"></a>
+                </div>
+                <div class="number">
+                  <div class="number__text__up hidden-mobile">
+                    Единый номер по РБ
+                  </div>
+                  <a href="tel: +375445517813" class="number__text__down">
+                    +375 (44) 551-78-13
+                  </a>
+                </div>
+              </div>
+              <a href="#" class="burger__header"><span></span></a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="main__banner">
+        <div class="container">
+          <div class="banner__block">
+            <h1 class="banner__maintext">
+              Авто из Америки и Европы без посредников и скрытых платежей
+            </h1>
+            <h2 class="banner__maintext__down">
+              Мы поможем вам подобрать желаемое авто
+            </h2>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <div class="container">
+          <div class="four_block">
+            <a href="#" class="four__blocks_link block__link">
+              Смотреть каталог авто
+            </a>
+            <a href="#" class="four__blocks_link block__link">
+              Оставить заявку на подбор
+            </a>
+            <a href="#" class="four__blocks_link block__link">
+              Рассчитать доставку лота
+            </a>
+            <a href="#" class="four__blocks_link block__link">
+              Отслеживание авто
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="feedback__block">
+        <div class="container">
+          <div class="feedback">
+            <h2 class="banner__maintext dark__clr">Оставить Заявку:</h2>
+            <div class="feedback__group feedback__name">
+              <h3 class="feedback__text">Имя</h3>
+              <input name="name" class="feedback__input required" />
+            </div>
+            <div class="feedback__group feedback__phone">
+              <h3 class="feedback__text">Телефон</h3>
+              <input
+                class="feedback__input feedback__input__phone phone required"
+                name="phone" placeholder="+375 (99) 99-99-999"
+              />
+            </div>
+            <div class="feedback__group feedback__city">
+              <h3 class="feedback__text">Город</h3>
+              <input name="city" class="feedback__input" required/>
+            </div>
+            <div class="confirm hidden-mobile">
+              <label>
+                <input id="confirm" type="checkbox" class="real__checkbox" />
+                <span class="custom__checkbox"></span>
+              </label>
+              <div class="confirm__text">
+                Подтверждаю согласие на обработку личных данных
+              </div>
+            </div>
+            <div class="application">
+              <div class="btn" id="send_button">Оставить заявку</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+    <script src="/js/script.js"></script>
+    <script src="/libs/jquery.maskedinput.js"></script>
+    <script src="jquery.validate.js"></script>
+</html>
