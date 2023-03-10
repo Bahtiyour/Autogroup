@@ -12,7 +12,7 @@ $("#send_button").click(function (e) {
   // console.log( $( "input[name~='name']" ).val()),
   $.ajax({
     type: "POST",
-    url: "saindmail.php", //Не уверен
+    url: "saindmail.php", //Не уверен это не точно
     data: {
       name: $("input[name~='name']").val(),
       phone:  $(".phone").val(),
