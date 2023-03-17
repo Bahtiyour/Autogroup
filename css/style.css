@@ -18,7 +18,7 @@ a {
   display: block;
   cursor: pointer;
 }
-.hidden-desktop{
+.hidden-desktop {
   display: none !important;
 }
 /* ХЕАДЕР */
@@ -50,7 +50,7 @@ a {
   object-fit: contain;
   width: 100%;
 }
-.logo__mobile{
+.logo__mobile {
   display: none;
 }
 /* СПИСОК */
@@ -263,7 +263,7 @@ a {
   background: #ffffff;
   border: 1px solid #c6c6c6;
 }
-.feedback__input::before{
+.feedback__input::before {
   content: "";
   display: inline-block;
   width: 32px;
@@ -272,7 +272,10 @@ a {
   background-size: contain;
   background-repeat: no-repeat;
   position: absolute;
-  border: 2px solid #F03442;
+  border: 2px solid #f03442;
+}
+.feedback__group-required {
+  background-color: red;
 }
 .confirm {
   display: flex;

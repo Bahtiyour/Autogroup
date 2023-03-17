@@ -110,38 +110,44 @@
         </div>
       </div>
       <div class="feedback__block">
-        <div class="container">
-          <div class="feedback">
-            <h2 class="banner__maintext dark__clr">Оставить Заявку:</h2>
-            <div class="feedback__group feedback__name">
-              <h3 class="feedback__text">Имя</h3>
-              <input name="name" class="feedback__input required" />
-            </div>
-            <div class="feedback__group feedback__phone">
-              <h3 class="feedback__text">Телефон</h3>
-              <input
-                class="feedback__input feedback__input__phone phone required"
-                name="phone" placeholder="+375 (99) 99-99-999"
-              />
-            </div>
-            <div class="feedback__group feedback__city">
-              <h3 class="feedback__text">Город</h3>
-              <input name="city" class="feedback__input required"/>
-            </div>
-            <div class="confirm hidden-mobile">
-              <label>
-                <input id="confirm" type="checkbox" class="real__checkbox" />
-                <span class="custom__checkbox"></span>
-              </label>
-              <div class="confirm__text">
-                Подтверждаю согласие на обработку личных данных
+        <form action="" method="" class="form js-form-validate">
+          <div class="container">
+            <div class="feedback">
+              <h2 class="banner__maintext dark__clr">Оставить Заявку:</h2>
+              <div class="feedback__group feedback__name">
+                <h3 class="feedback__text">Имя</h3>
+                <input name="name" class="feedback__input required" />
+              </div>
+              <div class="feedback__group">
+                <h3 class="feedback__text">Телефон</h3>
+                <input
+                  class="feedback__input feedback__input__phone phone required"
+                  name="phone" placeholder="+375 (99) 99-99-999"
+                />
+              </div>
+              <div class="feedback__group">
+                <h3 class="feedback__text">Город</h3>
+                <input name="city" class="feedback__input required"/>
+              </div>
+              <div class="feedback__group">
+                <h3 class="feedback__text">Email</h3>
+                <input name="email" class="feedback__input required email"/>
+              </div>
+              <div class="confirm hidden-mobile">
+                <label>
+                  <input id="confirm" type="checkbox" class="real__checkbox" />
+                  <span class="custom__checkbox"></span>
+                </label>
+                <div class="confirm__text">
+                  Подтверждаю согласие на обработку личных данных
+                </div>
+              </div>
+              <div class="application">
+                <div class="btn" id="send_button">Оставить заявку</div>
               </div>
             </div>
-            <div class="application">
-              <div class="btn" id="send_button">Оставить заявку</div>
-            </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>

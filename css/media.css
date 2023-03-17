@@ -7,11 +7,10 @@
   .hidden-mobile {
     display: none !important;
   }
-  .header{
+  .header {
     position: fixed;
   }
-  .header__list{
-
+  .header__list {
   }
   .logos__block {
     padding: 24px 0px;
