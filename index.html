@@ -110,24 +110,24 @@
         </div>
       </div>
       <div class="feedback__block">
-        <form action="" method="" class="form js-form-validate">
+        <form action="saindmail.php" method="Post" class="form js-form-validate">
           <div class="container">
             <div class="feedback">
               <h2 class="banner__maintext dark__clr">Оставить Заявку:</h2>
               <div class="feedback__group feedback__name">
                 <h3 class="feedback__text">Имя</h3>
-                <input name="name" class="feedback__input required" />
+                <input name="name" class="feedback__input required" oninput="this.value = this.value.replace(/[^аА-яЯ. aA-zZ.]/g, '').replace(/(\..*)\./g, '$1');" />
               </div>
               <div class="feedback__group">
                 <h3 class="feedback__text">Телефон</h3>
                 <input
                   class="feedback__input feedback__input__phone phone required"
-                  name="phone" placeholder="+375 (99) 99-99-999"
+                  name="phone" placeholder="+375 (99) 99-99-999" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
                 />
               </div>
               <div class="feedback__group">
                 <h3 class="feedback__text">Город</h3>
-                <input name="city" class="feedback__input required"/>
+                <input name="city" class="feedback__input required" oninput="this.value = this.value.replace(/[^аА-яЯ. aA-zZ.]/g, '').replace(/(\..*)\./g, '$1');"/>
               </div>
               <div class="feedback__group">
                 <h3 class="feedback__text">Email</h3>
