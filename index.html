@@ -110,13 +110,13 @@
         </div>
       </div>
       <div class="feedback__block">
-        <form action="saindmail.php" method="Post" class="form js-form-validate">
+        <form class="form js-form-validate">
           <div class="container">
             <div class="feedback">
               <h2 class="banner__maintext dark__clr">Оставить Заявку:</h2>
               <div class="feedback__group feedback__name">
                 <h3 class="feedback__text">Имя</h3>
-                <input name="name" class="feedback__input required" oninput="this.value = this.value.replace(/[^аА-яЯ. aA-zZ.]/g, '').replace(/(\..*)\./g, '$1');" />
+                <input type="text" name="name" class="feedback__input required" oninput="this.value = this.value.replace(/[^аА-яЯ. aA-zZ.]/g, '').replace(/(\..*)\./g, '$1');" />
               </div>
               <div class="feedback__group">
                 <h3 class="feedback__text">Телефон</h3>
@@ -133,6 +133,10 @@
                 <h3 class="feedback__text">Email</h3>
                 <input name="email" class="feedback__input required email"/>
               </div>
+              <!-- <div class="feedback__group">
+                <h3 class="feedback__text">Прикрепить фото</h3>
+                <input accept=".jpg, .png, .gif" name="image"  class="feedback__input required file__input"/>
+              </div> -->
               <div class="confirm hidden-mobile">
                 <label>
                   <input id="confirm" type="checkbox" class="real__checkbox" />
@@ -150,7 +154,7 @@
         </form>
       </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
     <script src="/js/script.js"></script>
     <script src="/libs/jquery.maskedinput.js"></script>
