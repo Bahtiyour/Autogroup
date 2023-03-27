@@ -30,22 +30,57 @@ $(document).ready(function () {
       });
     // console.log( $( "input[name~='name']" ).val()),
     // Отправка формы
-    let error = (error);
 
-    if error( = 0 ){
-      let formData = new FormData(form)
-      console.log()
-      $.ajax({
-        url: "/php/saindmail.php", //Не уверен это не точно
-        method: "POST",
-        data: formData,
-        processData: false,
-        contentType: false,
-        success: function (data) {
-          console.log(data.data);
-        },
+    let formData = new FormData(form);
+    console.log();
+
+    const form_button = document.getElementById("send_button");
+    form_button.addEventListener("click", formSend);
+
+    function formSend(e) {
+      e.preventDefault();
+      let error = formValidate(form);
+      let formDate = new FormData(form);
+      let files = $("#formImage").prop("files");
+      for (let i = 0; i < files.length; i++) {
+        formDate.append("files[]", files[i]);
+      }
+      if (error == 0) {
+        $.ajax({
+          url: "/php/saindmail.php",
+          method: "POST",
+          data: formDate,
+          processData: false,
+          contentType: false,
+          cache: false,
+          dataType: "html",
+          beforeSend: function () {},
+          success: function (data) {
+            console.log(data.data);
+          },
+        });
+      }
+    }
+
+    function formValidate(form) {
+      let error = 0;
+
+      if (input.classList.contains("phone")) {
+        if (telTest(input)) {
+          formAddError(input);
+          error++;
+        }
+      }
+    }
+
+    for (var i = 0; i < button.length; i++) {
+      button[i].addEventListener("click", function () {
+        if (input.value !== "") {
+          console.log(form.form);
+        } else {
+          alert("поля пустые");
+        }
       });
-    };
+    }
   });
-  //
 });

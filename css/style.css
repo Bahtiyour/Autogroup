@@ -275,7 +275,8 @@ a {
   border: 2px solid #f03442;
 }
 .feedback__group-required {
-  background-color: red;
+  background-color: yellow;
+  border: 1px solid red;
 }
 .confirm {
   display: flex;
