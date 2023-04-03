@@ -28,59 +28,108 @@ $(document).ready(function () {
           }
         }
       });
-    // console.log( $( "input[name~='name']" ).val()),
+    console.log($("input[name~='name']").val());
     // Отправка формы
+    // const forms = document.getElementById("form");
+    // form.addEventListener("submit", formSend);
 
-    let formData = new FormData(form);
-    console.log();
+    // async function formSend(e){
+    //   let FormData = new FormData(form)
+    //   e.preventDefault();
+    //   let form = this.closest('form')
+    //   let error = formValidate(form);
 
-    const form_button = document.getElementById("send_button");
-    form_button.addEventListener("click", formSend);
+    //   if(error === 0){
+    //     $.ajax({
+    //       url: "/saindmail.php",  // Куда отправить запрос
+    //       method: "post",
+    //       processData: false,
+    //       contentType: false,
+    //       data: FormData,
+    //       success: function (data) {
+    //           let info = JSON.parse(data);
+
+    //       }
+    //   })
+    //   }else{
+    //     alert('Заполните обязательные поля!');
+    //   }
+    // }
+
+    const form_button = document.getElementById("send_button"); // ищет по всему документу эту кнопку
+    form_button.addEventListener("click", formSend); // при клике на нёё происходит эта фуннкция
 
     function formSend(e) {
-      e.preventDefault();
-      let error = formValidate(form);
-      let formDate = new FormData(form);
-      let files = $("#formImage").prop("files");
-      for (let i = 0; i < files.length; i++) {
-        formDate.append("files[]", files[i]);
-      }
+      //пописываю функцию которую обявил с верху при клике на кнопку
+      e.preventDefault(); // запрещает отправку формы
+      let form = this.closest("form");
+
+      let error = formValidate(form); // обявляю переменную ерор куда передаю сам обьект формы
+      let formDate = new FormData(form); // c gjvjo. formdanf выдекевает все данные полей
+
       if (error == 0) {
+        // tckb ерор == 0 то происходит следующее
+
         $.ajax({
-          url: "/php/saindmail.php",
-          method: "POST",
-          data: formDate,
+          url: "/sandmail.php", // Куда отправить запрос
+          method: "post",
           processData: false,
           contentType: false,
-          cache: false,
-          dataType: "html",
-          beforeSend: function () {},
+          data: formDate,
           success: function (data) {
-            console.log(data.data);
+            let info = JSON.parse(data);
           },
         });
+
+        form.reset();
+        formPreview.innerHTML = "";
+        let text = "";
+        let selections = document.querySelectorAll(".select");
+        selections.forEach(function (element) {
+          text = element.querySelector(".select__item").innerText;
+          currentText = element.querySelector(".select__current"); // текст радителя
+          currentText.innerText = text;
+        });
+
+        alert("da");
+      } else {
+        alert("no");
       }
     }
 
     function formValidate(form) {
       let error = 0;
+      let formRequired = document.querySelector(".required");
+      for (let index = 0; index < formRequired.length; idex++) {
+        const input = formRequired[index];
+        formRemoveError(input);
 
-      if (input.classList.contains("phone")) {
-        if (telTest(input)) {
-          formAddError(input);
-          error++;
-        }
-      }
-    }
-
-    for (var i = 0; i < button.length; i++) {
-      button[i].addEventListener("click", function () {
-        if (input.value !== "") {
-          console.log(form.form);
+        if (input.classList.contains(".email")) {
+          if (emailTest(input)) {
+            formAddError(input);
+            error++;
+          }
         } else {
-          alert("поля пустые");
+          if (input.value === "") {
+            formAddError(input);
+            error++;
+          }
         }
-      });
+        return error;
+      }
+      function formAddError(input) {
+        input.parentElement.classList.add(".required");
+        input.classList.add(".error");
+      }
+      function formRemoveError(input) {
+        input.parentElement.classList.remove(".required");
+        input.classList.remove(".error");
+      }
+      function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(
+          input.value
+        );
+      }
     }
   });
 });

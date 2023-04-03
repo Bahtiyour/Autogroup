@@ -18,6 +18,9 @@ a {
   display: block;
   cursor: pointer;
 }
+button{
+  width: 100%;
+}
 .hidden-desktop {
   display: none !important;
 }
